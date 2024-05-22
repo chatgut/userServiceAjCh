@@ -23,7 +23,7 @@ public class UserService {
         }
     }
 
-    public Optional<UserEntity> getUser(Long id) {
+    public Optional<UserEntity> getUserById(Long id) {
         return Optional.of(userRepository.findById(id).get());
     }
 
