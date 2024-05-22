@@ -1,13 +1,11 @@
-package com.example.userserviceajch;
+package com.example.UserServiceAjCh;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserServiceAjChApplicationTests {
-
+public class UserServiceAjChApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.userserviceajch.user;
+package com.example.UserServiceAjCh.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

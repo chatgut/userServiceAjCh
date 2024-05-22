@@ -1,4 +1,4 @@
-package com.example.userserviceajch.user;
+package com.example.UserServiceAjCh.user;
 
 
 import jakarta.persistence.*;

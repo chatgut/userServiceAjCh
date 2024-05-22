@@ -1,4 +1,4 @@
-package com.example.userserviceajch;
+package com.example.UserServiceAjCh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
