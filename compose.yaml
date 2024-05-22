@@ -1,0 +1,24 @@
+services:
+  spring:
+    image: ajohnsson95/userserviceajch:latest
+    ports:
+      - 8087:8087
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/userservicedatabase
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_PlATFORM:mysql
+    depends_on:
+      - mysql
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - MYSQL_DATABASE=userservicedatabase
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=secretpassword
+      - MYSQL_USER=admin
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./data:/var/lib/mysql
