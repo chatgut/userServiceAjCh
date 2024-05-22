@@ -1,25 +1,24 @@
-version: '3.8'
-
 services:
-  mysql:
-    image: mysql:latest
-    environment:
-      - MYSQL_DATABASE=userservicedatabase
-      - MYSQL_ROOT_PASSWORD=secretpassword
-    ports:
-      - '3306:3306'
-    volumes:
-      - ./data:/var/lib/mysql
-
-  spring:
-    image: ajohnsson95/userserviceajch:latest
-    ports:
-      - '8087:8087'
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/userservicedatabase
-      - SPRING_DATASOURCE_USERNAME=admin
-      - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SPRING_JPA_PLATFORM=mysql
+  app:
+    image: ajohnsson95/userserviceajch
     depends_on:
       - mysql
+    ports:
+      - 8087:8087
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/userservicedatabase
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_PlATFORM: mysql
+    restart: on-failure
+
+  mysql:
+    image: 'mysql:8.3.0'
+    environment:
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: admin
+      MYSQL_DATABASE: userservicedatabase
+    ports:
+      - '3306:3306'

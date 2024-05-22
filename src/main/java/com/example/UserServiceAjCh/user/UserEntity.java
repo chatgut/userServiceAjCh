@@ -16,6 +16,9 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @NonNull
+    @Column(unique = true)
     private String userName;
     private String imageUrl;
     private String userId;
