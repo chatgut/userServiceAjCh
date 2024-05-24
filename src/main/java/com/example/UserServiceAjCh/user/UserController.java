@@ -3,10 +3,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/users")
 public class UserController {
 
     private final UserService userService;
@@ -15,30 +15,28 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/user")
+    @PostMapping
     public ResponseEntity<String> createUser(@RequestBody UserEntity user) {
         return userService.createUser(user);
     }
 
-    @GetMapping("/user/{id}")
-    public Optional<UserEntity> getUserById(@PathVariable Long id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
-    @GetMapping(value = "/users")
-    public List<UserEntity> getAllUsers() {
+    @GetMapping("/all")
+    public ResponseEntity<List<UserEntity>> getAllUsers() {
         return userService.findAllUsers();
     }
 
-    @PutMapping("/user/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody UserEntity user) {
         return userService.updateUser(id, user);
     }
 
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         return userService.deleteUser(id);
     }
-
-
 }
