@@ -19,12 +19,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '22'
+          java-version: '11'
           distribution: 'temurin'
-          server-id: github
-          server-username: ${{ github.actor }}
-          server-password: ${{ secrets.GITHUB_TOKEN }}
-          overwrite-settings: true
 
       - name: Build Spring Boot project
         run: |
