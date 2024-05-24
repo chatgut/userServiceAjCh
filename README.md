@@ -14,11 +14,7 @@ Runs on port 8087 and the MySQL database runs on port 3306.
 # How to get started:
 ### Clone the repository: 
 
-https://github.com/chatgut/userServiceAjCh.git
-
-### Run the command:
-
-docker build -t ajohnsson95/userserviceajch:latest .                 
+https://github.com/chatgut/userServiceAjCh.git                
 
 ### Run the command:
 
@@ -52,7 +48,7 @@ PUT http://localhost:8087/user/{id}
  
 Example JSON:
 {
-"userName": "JaneDoe", 
+"userName": "JohnDoe", 
 "imageUrl" : "https://th.bing.com/th/id/OIP.OYbzbbyzogwtriubL2pP0AHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.6&pid=1.7"
 }
  
